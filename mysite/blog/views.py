@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from .forms import CommentForm
 from .models import Post
@@ -45,3 +46,4 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
